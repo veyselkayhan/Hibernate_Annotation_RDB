@@ -87,7 +87,7 @@ public class MyFactoryRepository <T,ID> implements ICrud <T, ID>{
      * @return
      */
     @Override
-    public Optional<T> findByID(ID id) {
+    public Optional<T> findById(ID id) {
         CriteriaQuery<T> criteria = (CriteriaQuery<T>) criteriaBuilder.createQuery(t.getClass());
         Root<T> root = (Root<T>) criteria.from(t.getClass());
         criteria.select(root);

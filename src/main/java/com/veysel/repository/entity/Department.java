@@ -29,6 +29,6 @@ public class Department {
 
      */
 
-    @OneToMany(mappedBy = "department",fetch = FetchType.EAGER)
-    List<Person>personList;
+    @OneToMany(mappedBy = "department",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    List<Person> personList;
 }

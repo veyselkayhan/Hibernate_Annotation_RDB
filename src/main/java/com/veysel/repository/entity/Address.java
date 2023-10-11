@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Builder
@@ -29,8 +30,16 @@ public class Address {
     Integer number;
 
 
+//    @ManyToOne
+//    Person person;
 
-
+    @ManyToMany
+    @JoinTable(
+            name = "tbl_person_address",
+            joinColumns = {@JoinColumn(name = "adres_id")},
+            inverseJoinColumns = {@JoinColumn(name = "personel_id")}
+    )
+    List<Person> personList;
 
 }
 

@@ -14,7 +14,7 @@ public interface ICrud <T,ID>{
 
     T update(T entity);
 
-    Optional<T> findByID(ID id);
+    Optional<T> findById(ID id);
 
     boolean existById(ID id);
 
